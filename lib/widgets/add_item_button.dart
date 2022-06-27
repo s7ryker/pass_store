@@ -20,7 +20,8 @@ class AddItemButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(32.0),
       child: GestureDetector(
-        onTap: () {
+        onTap: () async {
+          // await Provider.of<Home>(context, listen: false).logData();
           Navigator.of(context).push(HeroDialogRoute(builder: (context) {
             return _AddItemPopupCard();
           }));

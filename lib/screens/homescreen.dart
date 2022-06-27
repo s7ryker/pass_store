@@ -7,6 +7,7 @@ import 'package:pass_store/widgets/add_item_button.dart';
 import 'package:pass_store/widgets/appbar.dart';
 import 'package:provider/provider.dart';
 
+
 import 'components/list_item.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // }
 
+  
   @override
   void initState() {
     Provider.of<Home>(context, listen: false).setItems();
@@ -42,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.backgroundFadedColor,
-      appBar: customAppbar(),
+      appBar: customAppbar(context),
       body: Stack(
         children: [
           Container(
@@ -76,17 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      // ListView.builder(
-      //   itemBuilder: (ctx, index) => ListItem(
-      //     size: size,
-      //     item: items[index],
-      //   ),
-      //   itemCount: items.length,
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () => addItem(context, size),
-      //   child: const Icon(Icons.add),
-      // ),
+     
     );
   }
 
